@@ -36,7 +36,7 @@ class User(AbstractUser):
 
 class Penguin(models.Model):
     user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
-    species = models.CharField(max_length=20, choices=penguins, default="Adelie", blank=False, null=False)
+    species = models.CharField(max_length=20, choices=penguins, blank=True, null=False)
     island = models.CharField(max_length=20, choices = islands, default= "Biscoe")
     bill_length_mm = models.FloatField(blank=False, null=False)
     bill_depth_mm = models.FloatField(blank=False, null=False)
